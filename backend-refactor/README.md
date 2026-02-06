@@ -51,12 +51,12 @@ Name of the image is optional and up to the user, use what is more confortable.
 
 
 # Steps taken to refactor the challenge
-1 - Explore the repo to check what contains and how can be build [ 30 mins ]:
-2 - Modificate the structure and packages names[ 30 mins ]:
-3 - Remove all unused code, including redundant or mispelled functions and classes [ 2 hours ]:
-4 - add logging and configurations files for production environment [ 30 mins ]
-5 - add missing calls into the router like displaying the index page and the mesurements [ 30 mins ]
-5 - Dockerization, github actions and missing tests [ 1 hour ]
+ - Explore the repo to check what contains and how can be build [ 30 mins ]:
+ - Modificate the structure and packages names[ 30 mins ]:
+ - Remove all unused code, including redundant or mispelled functions and classes [ 2 hours ]:
+ - add logging and configurations files for production environment [ 30 mins ]
+ - add missing calls into the router like displaying the index page and the mesurements [ 30 mins ]
+ - Dockerization, github actions and missing tests [ 1 hour ]
 
 # Decisions 
 
