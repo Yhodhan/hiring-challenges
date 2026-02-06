@@ -1,11 +1,8 @@
 """Measurements router (v2 style but registered as v1)."""
 from fastapi import APIRouter, HTTPException, Query
-from typing import Any, List, Optional, Dict
+from typing import Any
 from datetime import datetime
-from app.services.measurement_svc import MeasurementService, get_measurements_for_signals
-from app.schemas.measurement_schema import validate_data
-from app.utils.date_utils import parse_date, validate_date_range
-from app.utils.measurement_utils import format_measurement
+from app.services.measurement_svc import MeasurementService
 
 router = APIRouter(tags=["measurements"])
 
