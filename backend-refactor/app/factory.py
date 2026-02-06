@@ -1,24 +1,33 @@
 """Application factory and configuration."""
+import logging
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from app.api.v1 import router as endpoints_router
 from app.api import health as health_router
-from app.core.config import get_settings
 
-def create_app() -> FastAPI:
+logger = logging.getLogger(__name__)
+
+def create_app(settings) -> FastAPI:
     """Create and configure the FastAPI application."""
-
-    settings = get_settings()
 
     app = FastAPI(
         title=settings.app_name,
         version=settings.api_version
     )
+
+    logger.debug("=== App created ===")
     
     # Register v1 routes
     app.include_router(endpoints_router.router, prefix="/api/v1")
+    logger.debug("=== Api endpoints mounted ===")
+
     app.include_router(health_router.router, prefix="/health")
+    logger.debug("=== Health endpoint created ===")
 
     # mount necessary folders
     app.mount("/static", StaticFiles(directory="app/static"), name="static")
+    logger.debug("=== static folder mounted ===")
+
+    logger.info("=== Application created succesfully ===")
+
     return app
