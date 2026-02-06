@@ -19,8 +19,7 @@
     pip install -r requirements.txt
     ```
 
-3. Run:
-It can be done with:
+3. Run can be done with:
 ```bash
     python -m app.main
 ```
@@ -32,7 +31,8 @@ if you want reload or you can skip the flag if not wanted, it is suggested to ha
 
 
 **Testing**
-  Testing can be done by simple running the next command inside the virtual venv:
+
+Testing can be done by simple running the next command inside the virtual venv:
 ```bash
     pytest tests/
 ```
