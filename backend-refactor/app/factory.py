@@ -12,7 +12,10 @@ def create_app(settings) -> FastAPI:
 
     app = FastAPI(
         title=settings.app_name,
-        version=settings.api_version
+        version=settings.api_version,
+        docs_url="/docs" if settings.env != "prod" else None,
+        redoc_url="/redoc" if settings.env != "prod" else None,
+        openapi_url="/openapi.json" if settings.env != "prod" else None
     )
 
     logger.debug("=== App created ===")

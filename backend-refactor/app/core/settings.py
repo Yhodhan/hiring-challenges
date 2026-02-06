@@ -9,5 +9,6 @@ class AppSettings(BaseSettings):
     debug_mode: bool = True
     data_path: str = "data/signal.json"
     log_level: str = "INFO"
+    env: str = "dev"
     
     model_config = SettingsConfigDict(env_file=".env")
