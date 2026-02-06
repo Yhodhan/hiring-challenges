@@ -38,12 +38,12 @@ Testing can be done by simple running the next command inside the virtual venv:
 ```
   
 **Docker**
-Docker container can be run with: 
-Build:
+
+Docker container can be run with 
 ```bash
     docker build -t signals .
 ```
-Run:
+then
 ```bash
     docker run -p 8000:8000 signals
 ```
