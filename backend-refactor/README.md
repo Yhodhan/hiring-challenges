@@ -1,36 +1,80 @@
-Steps taken to refactor the challenge
+# Setup project 
 
-1 - Explore the repo  [ 1 hour ]
+**Requisites**
+- Python 3.11.8
+- Using pyenv to set it up locally is recommended
 
-* Try to run it up to check what it does.
-* Fix missing dependencies in order to run the server.
-* Restructure the project to match a more classic FastApi approach.
+**Building**
+    
+1. Create and activate venv:
+    ```bash
+    python -m venv .venv
+    # Windows:
+    .venv\Scripts\activate
+    # Linux/Mac:
+    source .venv/bin/activate
+    ```
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run:
+It can be done with:
+```bash
+    python -m app.main
+```
+or
+```bash
+    uvicorn app.main:app --reload
+```
+if you want reload or you can skip the flag if not wanted, it is suggested to have it on for development and testing enviroments
 
 
-2 - Modificate the configurations and structure  [ 1 hour ]
+**Testing**
+  Testing can be done by simple running the next command inside the virtual venv:
+```bash
+    pytest tests/
+```
+  
+**Docker**
+Docker container can be run with: 
+Build:
+```bash
+    docker build -t signals .
+```
+Run:
+```bash
+    docker run -p 8000:8000 signals
+```
+Name of the image is optional and up to the user, use what is more confortable.
 
-* Remove unused or deprecated config files.
-* Remove unused folders and move actual used functions to files that contains the same logic.
-* Add initial tests folder to add proper testing into the project.
 
-3 - Remove all unused code [ 1 hour ]
+# Steps taken to refactor the challenge
+1 - Explore the repo to check what contains and how can be build [ 30 mins ]:
+2 - Modificate the structure and packages names[ 30 mins ]:
+3 - Remove all unused code, including redundant or mispelled functions and classes [ 2 hours ]:
+4 - add logging and configurations files for production environment [ 30 mins ]
+5 - add missing calls into the router like displaying the index page and the mesurements [ 30 mins ]
+5 - Dockerization, github actions and missing tests [ 1 hour ]
 
-* Track and delete all classes, imports and functions that are not used
-* Simplify logic by deleting unused files after cleaning all camel case and uncalled functions
-* Remove the logic of v2 and move it to v1 as it is registered
-* Simplify routing schemas by putting the endpoitns in the same folder
+# Decisions 
 
-4 - Start to add production missing code [ 1 hour ]
+- Restructure the project to match a more classic FastApi approach.
+- Remove unused folders and move actual used functions to files that contains the same logic.
+- Add a health endpoint to monitor the service once deployed.
+- Rename files to be concistent with the rest of the project.
+- Add Logger to check track activity.
+- Not enable documentation endpoints when the environment is in production.
+- Remove the logic of v2 and move it to v1 as it is registered
+- Simplify routing schemas by putting the endpoitns in the same folder
+- Dockerization of the application in an optimized docker image
+- Add github actions to performe testing and linting checkings when submitting a pull request
+- Add tests to check the service is properly working
 
-* Add a health endpoint to monitor once deployed that the service is up.
-* Check for missing function calls into the classes that manages that mesurements and assets.
-* Rename files to be concistent with the rest of the project.
-* Add Logger to check what is happening.
-* Not enable documentation endpoints when the environment is in production, is a security leak.
+# Missing features
 
-5 - Dockerization, github actions and missing tests [ 2 hour ]
-
-* Dockerization of the application in an optimized docker image
-* Add github actions to performe testing and linting checkings
-* Add tests to check the service is properly working
-
+- Tests for the mesurements service to check its proper behaviour. 
+- Configuration to connect it to Datadog/Graphana or other monitoring systems 
+- Restructure some of the logics as there yet files that only contains one function.
+- Better management of the dependencies versions to avoid errors. 
