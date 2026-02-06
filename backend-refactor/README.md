@@ -57,7 +57,7 @@ Name of the image is optional and up to the user, use what is more confortable.
  - add logging and configurations files for production environment [ 30 mins ]
  - add missing calls into the router like displaying the index page and the mesurements [ 30 mins ]
  - Dockerization, github actions and missing tests [ 1 hour ]
- - Polish documentation [ 1 hr ]
+ - Polish documentation [ 1 hour ]
 
 # Decisions 
 
