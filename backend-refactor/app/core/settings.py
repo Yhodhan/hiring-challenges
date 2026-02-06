@@ -1,6 +1,6 @@
 """Application settings and environment variables."""
 import os
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class AppSettings(BaseSettings):
     """Application settings loaded from environment."""
@@ -9,13 +9,4 @@ class AppSettings(BaseSettings):
     debug_mode: bool = True
     data_path: str = "data/signal.json"
     
-    class Config:
-        env_file = ".env"
-
-class Settings(BaseSettings):
-    """Alternative settings class."""
-    APP_NAME: str = "AssetAPI"
-    API_VERSION: str = "v1"
-    
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env")
