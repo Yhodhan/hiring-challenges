@@ -21,7 +21,7 @@ Steps taken to refactor the challenge
 * Remove unused or deprecated config files.
 * Remove unused folders and move actual used functions to files that contains the same logic.
 * Add initial tests folder to add proper testing into the project.
-vv
+
 3 - Remove all unused code [ 1 hour ]
 
 * Track and delete all classes, imports and functions that are not used
@@ -40,5 +40,6 @@ vv
 5 - Dockerization, github actions and missing tests [ 2 hour ]
 
 * Dockerization of the application in an optimized docker image
-* Add 
+* Add github actions to performe testing and linting checkings
+* Add tests to check the service is properly working
 
