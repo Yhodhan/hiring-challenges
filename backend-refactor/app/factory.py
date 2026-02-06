@@ -18,8 +18,6 @@ def create_app(settings) -> FastAPI:
         redoc_url="/redoc" if settings.env != "prod" else None,
         openapi_url="/openapi.json" if settings.env != "prod" else None
     )
-
-    logger.debug("=== App created ===")
     
     # Register v1 routes
     app.include_router(endpoints_router.router, prefix="/api/v1")
