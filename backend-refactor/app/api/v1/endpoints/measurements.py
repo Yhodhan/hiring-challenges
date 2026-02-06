@@ -4,7 +4,7 @@ from typing import Any
 from datetime import datetime
 from app.services.measurement_svc import MeasurementService
 
-router = APIRouter(tags=["measurements"])
+router = APIRouter()
 
 measurement_service = MeasurementService()
 

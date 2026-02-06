@@ -5,26 +5,13 @@ from app.services.asset_service import AssetService
 from app.schemas.asset_schema import AssetResponse
 from app.utils.helpers import validate_data
 
-router = APIRouter(tags=["assets"])
+router = APIRouter()
 
 # Instance-based approach
 asset_service = AssetService()
 
-@router.get("/assets", response_model=List[AssetResponse])
+@router.get("", response_model=List[AssetResponse])
 async def get_assets():
     """Get all assets with their signals."""
-    try:
-        assets = asset_service.get_all_assets()
-        
-        if not validate_data(assets):
-            raise HTTPException(status_code=404, detail="No assets found")
-        
-        return assets
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@router.get("/assets/list")
-async def get_assets_alternative():
-    """Alternative endpoint for assets"""
-    assets =asset_service.get_all_assets()
-    return {"assets": assets}
+    assets = asset_service.get_all_assets()
+    return assets

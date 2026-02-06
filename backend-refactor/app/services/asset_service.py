@@ -2,7 +2,6 @@
 from typing import List, Dict
 from app.db.asset_db import get_assets, fetch_assets
 from app.utils.asset_helper import format_asset_response, transform_asset
-from app.utils.helpers import validate_data
 
 class AssetService:
     """Service for managing assets."""
