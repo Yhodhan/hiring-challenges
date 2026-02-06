@@ -8,17 +8,6 @@ def format_asset_response(asset_data: Dict) -> Dict:
         "signals": asset_data.get("signals", [])
     }
 
-def FormatAssetResponse(data: Dict) -> Dict:
-    """PascalCase version."""
-    return format_asset_response(data)
-
-def transform_asset(asset: Dict) -> Dict:
-    """Transform asset to API format."""
-    return {
-        "asset_id": asset["asset_id"],
-        "signals": asset["signals"]
-    }
-
 def process_asset_data(asset_info: Dict) -> Dict:
     """Process asset data."""
     # This does the same as format_asset_response but with extra steps
