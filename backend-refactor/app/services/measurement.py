@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import List, Dict
 from app.utils.date_utils import validate_date_range
 from app.utils.measurement_utils import format_measurement
-from app.db.measurement_db import get_measurements
+from app.db.measurement import get_measurements
 import statistics
     
 class MeasurementService:

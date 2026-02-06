@@ -1,5 +1,5 @@
 from typing import List, Dict
-from app.db.signal_db import load_signals
+from app.db.signal import load_signals
 
 def get_assets() -> List[Dict]:
     """Get all assets grouped by asset_id."""

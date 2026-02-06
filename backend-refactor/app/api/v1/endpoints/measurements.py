@@ -2,7 +2,7 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import Any
 from datetime import datetime
-from app.services.measurement_svc import MeasurementService
+from app.services.measurement import MeasurementService
 
 router = APIRouter()
 
