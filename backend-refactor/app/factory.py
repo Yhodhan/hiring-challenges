@@ -21,8 +21,6 @@ def create_app() -> FastAPI:
     app.include_router(assets_v1.router, prefix="/api/v1")
     app.include_router(measurements.router, prefix="/api/v1")
 
-    app.include_router(assets_v1.router, tags=["assets"])
-    app.include_router(measurements.router, tags=["measurement"])
     #app.include_router(health_check.router, prefix="/health")
 
     # mount necessary folders

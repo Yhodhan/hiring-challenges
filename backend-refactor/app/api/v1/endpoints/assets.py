@@ -2,7 +2,7 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
 from app.services.asset_service import AssetService
-from app.schemas.asset_schema import AssetResponse, AssetListResponse
+from app.schemas.asset_schema import AssetResponse
 from app.utils.helpers import validate_data
 
 router = APIRouter(tags=["assets"])
