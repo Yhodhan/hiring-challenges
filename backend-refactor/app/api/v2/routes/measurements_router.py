@@ -7,11 +7,9 @@ from app.schemas.measurement_schema import validate_data
 from app.utils.date_utils import parse_date, validate_date_range
 from app.utils.measurement_utils import format_measurement
 
-
 router = APIRouter(tags=["measurements"])
 
 measurement_service = MeasurementService()
-
 
 @router.get("/measurements/stats/{signal_id}", response_model=Any)
 async def get_signal_stats(

@@ -2,7 +2,7 @@
 from datetime import datetime
 from typing import List, Optional
 from pydantic import BaseModel
-from app.helpers.info_helper import get_date
+from app.utils import get_date
 
 class MeasurementRequest(BaseModel):
     """Request schema for measurements endpoint."""
