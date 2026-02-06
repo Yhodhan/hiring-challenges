@@ -1,4 +1,4 @@
-"""Measurements router (v2 style but registered as v1)."""
+"""Measurements endpoint (v1)"""
 from fastapi import APIRouter, HTTPException, Query
 from typing import Any
 from datetime import datetime
