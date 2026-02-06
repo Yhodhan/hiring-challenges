@@ -1,6 +1,6 @@
 """Database operations for measurements."""
 from datetime import datetime
-from typing import List, Dict, Optional
+from typing import List, Dict 
 import random
 
 def get_measurements(signal_ids: List[str], from_date: datetime, to_date: datetime) -> List[Dict]:
@@ -19,10 +19,3 @@ def get_measurements(signal_ids: List[str], from_date: datetime, to_date: dateti
             })
 
     return measurements
-
-def fetch_measurements(signal_ids: List[str], start: datetime, end: datetime) -> List[Dict]:
-    """Alternative function to fetch measurements."""
-    return get_data(signal_ids, start, end)
-
-def GetMeasurements(signalIds: List[str], fromDate: datetime, toDate: datetime) -> List[Dict]:
-    return get_data(signalIds, fromDate, toDate)

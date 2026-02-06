@@ -1,5 +1,5 @@
 """Utility helpers for assets."""
-from typing import List, Dict
+from typing import Dict
 
 def format_asset_response(asset_data: Dict) -> Dict:
     """Format asset data for response."""

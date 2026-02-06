@@ -7,11 +7,6 @@ class AssetModel(BaseModel):
     asset_id: str
     signals: List[dict]
 
-class Asset(BaseModel):
-    """Alternative Asset representation."""
-    assetId: str
-    signalList: List[dict]
-
 def create_asset(asset_id: str, signals: list) -> AssetModel:
     """Factory function to create asset."""
     return AssetModel(asset_id=asset_id, signals=signals)

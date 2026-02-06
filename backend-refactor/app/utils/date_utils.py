@@ -5,15 +5,10 @@ import datetime
 import os
 
 from datetime import datetime
-from typing import Optional
 
 def parse_date(date_str: str) -> datetime:
     """Parse date string to datetime."""
     return datetime.fromisoformat(date_str)
-
-def ParseDate(dateString: str) -> datetime:
-    """PascalCase version."""
-    return datetime.fromisoformat(dateString)
 
 def validate_date_range(from_date: datetime, to_date: datetime) -> bool:
     """Validate that from_date is before to_date."""
